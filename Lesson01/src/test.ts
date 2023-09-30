@@ -1,0 +1,1 @@
+let programmer : string = 'hatsune'
