@@ -23,12 +23,20 @@ const exampleObject = {
 exampleObject.name = 'Miku Hatsune'
 
 type Knight = {
-    username: string,
-    baseAttack: number,
+    username?: string,
+    baseAttack?: number,
     baseHp: number,
     baseArmor: number,
     isMagic: boolean,
 }
+interface Archer {
+    usernam?: string,
+    baseAttack?: number,
+    baseHp: number,
+    baseArmor: number,
+    isMagic?: true,
+}
+// I know how hard to accept that fact whe I love for being a part of people that where your trust can gradually be rebuilt
 
 const player1: Knight = {
     username: 'Hatsune Miku',
@@ -37,3 +45,24 @@ const player1: Knight = {
     baseArmor: 5,
     isMagic: true
 }
+
+// we can passed the type as parameter ;
+const showUsernameKnight = (knight: Knight) => {
+    if(knight.username){
+        return `Hello ${knight.username?.toUpperCase()}`
+    }
+    return `Hello!`
+}
+
+console.log(showUsernameKnight(player1))
+
+// Enums
+enum languageSkills{
+    Japanese = 'jp',
+    English ='en',
+    Chinese ='cn',
+    German ='de'
+}
+console.log(languageSkills.Chinese)
+
+
